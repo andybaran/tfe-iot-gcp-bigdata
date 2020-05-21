@@ -1,5 +1,9 @@
+terraform {
+    required_version = ">= 0.12.0"
+}
+
 provider "google" {
-  credentials = file(var.account_file_path)
+  credentials = var.creds
   project     = var.gcloud-project
   user_project_override = true
 }
@@ -11,12 +15,10 @@ resource "google_project_service" "service" {
         "pubsub.googleapis.com",
         "cloudiot.googleapis.com"
     ])
-    
     service = each.key
     project =  var.gcloud-project
     disable_dependent_services = true
     disable_on_destroy = false
-
 }
 
 // ************************************************************   

@@ -21,7 +21,3 @@ variable "pub_sub_sub" {
 variable "zone" {
   description = "GCP zone, needed by dataflow"
 }
-
-variable "pub_sub_sub" {
-    description = "Pub/Sub Subscription"
-}
