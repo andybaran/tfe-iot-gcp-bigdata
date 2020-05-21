@@ -2,8 +2,8 @@ variable "gcloud-project" {
   description = "Google project name"
 }
 
-variable "account_file_path" {
-  description = "Path to GCP account file"
+variable "creds" {
+  description = "GCP Service Account Credentials"
 }
 
 variable "bq_dataset" {
